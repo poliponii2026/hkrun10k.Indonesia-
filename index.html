@@ -1,850 +1,122 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HK 10K Run Indonesia</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<title>HK 10K Run Indonesia - Magelang</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
-}
-/* VIDEO BACKGROUND */
-
-.video-bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-overflow:hidden;
-z-index:-2;
-}
-
-.video-bg video{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(
-to bottom,
-rgba(0,0,0,.65),
-rgba(0,0,0,.88)
-);
-z-index:-1;
-}
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(12px);
-z-index:1000;
-}
-
-.logo{
-font-size:30px;
-font-weight:900;
-color:#FFD700;
-text-shadow:
-0 0 10px rgba(255,215,0,.7);
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
-
-nav ul li a{
-color:#fff;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-nav ul li a:hover{
-color:#FFD700;
-}
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:120px 20px;
-}
-
-.hero-content{
-max-width:900px;
-}
-
-.hero h1{
-font-size:72px;
-font-weight:900;
-line-height:1.1;
-margin-bottom:20px;
-
-text-shadow:
-0 0 10px rgba(255,215,0,.6),
-0 0 20px rgba(255,215,0,.6),
-0 0 40px rgba(255,215,0,.5),
-0 0 80px rgba(255,215,0,.4);
-
-animation:heroGlow 2s infinite alternate;
-}
-
-.hero h1 span{
-color:#FFD700;
-}
-
-.hero p{
-font-size:20px;
-color:#ddd;
-margin-bottom:35px;
-}
-@keyframes heroGlow{
-
-from{
-text-shadow:
-0 0 10px rgba(255,215,0,.5),
-0 0 20px rgba(255,215,0,.5);
-}
-
-to{
-text-shadow:
-0 0 20px rgba(255,215,0,.9),
-0 0 40px rgba(255,215,0,.9),
-0 0 80px rgba(255,215,0,.7);
-}
-
-}
-/* BUTTON */
-
-.btn{
-display:inline-block;
-padding:16px 35px;
-border-radius:50px;
-
-background:
-linear-gradient(
-45deg,
-#FFD700,
-#FFB300
-);
-
-color:#000;
-font-weight:800;
-text-decoration:none;
-
-transition:.4s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:
-0 0 20px rgba(255,215,0,.5);
-}
-/* COUNTDOWN */
-
-.countdown{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-top:45px;
-flex-wrap:wrap;
-}
-
-.box{
-width:130px;
-padding:25px;
-
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(15px);
-
-border:
-1px solid rgba(255,215,0,.35);
-
-border-radius:20px;
-
-box-shadow:
-0 0 20px rgba(255,215,0,.15);
-
-transition:.4s;
-}
-
-.box:hover{
-transform:translateY(-8px);
-}
-
-.box h2{
-font-size:42px;
-color:#FFD700;
-}
-
-.box span{
-font-size:14px;
-}
-/* SECTION */
-
-section{
-padding:90px 8%;
-}
-
-.title{
-text-align:center;
-font-size:45px;
-font-weight:900;
-margin-bottom:50px;
-color:#FFD700;
-}
-/* CARD */
-
-.cards{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-}
-
-.card{
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(12px);
-
-border-radius:20px;
-
-overflow:hidden;
-
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-display:block;
-}
-
-.card-content{
-padding:25px;
-}
-
-.price{
-font-size:35px;
-font-weight:900;
-color:#FFD700;
-margin:15px 0;
-}
-/* BENEFIT */
-
-.benefit-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.benefit{
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(12px);
-
-padding:30px;
-
-border-radius:20px;
-
-text-align:center;
-
-transition:.4s;
-}
-
-.benefit:hover{
-transform:translateY(-8px);
-}
-
-.benefit h3{
-margin-bottom:15px;
-color:#FFD700;
-}
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:25px;
-}
-
-.gallery img{
-width:100%;
-border-radius:20px;
-transition:.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-}
-/* FAQ */
-
-.faq-item{
-background:
-rgba(255,255,255,.08);
-
-padding:25px;
-
-border-radius:20px;
-
-margin-bottom:20px;
-
-backdrop-filter:blur(12px);
-}
-
-.faq-item h3{
-color:#FFD700;
-margin-bottom:10px;
-}
-/* CTA */
-
-.cta{
-text-align:center;
-padding:100px 20px;
-}
-
-.cta h2{
-font-size:50px;
-margin-bottom:20px;
-}
-
-.cta p{
-font-size:20px;
-color:#ddd;
-margin-bottom:30px;
-}
-/* FOOTER */
-
-footer{
-padding:30px;
-text-align:center;
-background:
-rgba(0,0,0,.6);
-}
-/* FLOATING WHATSAPP */
-
-.wa-float{
-position:fixed;
-right:25px;
-bottom:25px;
-
-width:65px;
-height:65px;
-
-border-radius:50%;
-
-background:#25D366;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:30px;
-
-text-decoration:none;
-
-z-index:9999;
-
-box-shadow:
-0 0 25px rgba(37,211,102,.5);
-
-animation:waPulse 2s infinite;
-}
-
-@keyframes waPulse{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.1);
-}
-
-100%{
-transform:scale(1);
-}
-
-}
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:45px;
-}
-
-.title{
-font-size:34px;
-}
-
-.cta h2{
-font-size:35px;
-}
-
-nav ul{
-display:none;
-}
-
-.box{
-width:110px;
-}
-
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;background:#000;color:#fff;overflow-x:hidden}
+#bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.overlay{position:fixed;inset:0;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85));z-index:-1}
+section{padding:80px 20px}
+.container{max-width:1200px;margin:auto}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:clamp(3rem,8vw,7rem);font-weight:900;color:#f7c948;text-shadow:0 0 30px #f7c948}
+.hero p{font-size:1.2rem;margin:20px 0}
+.btn{display:inline-block;padding:16px 32px;background:linear-gradient(45deg,#d4a017,#ffd700);color:#000;text-decoration:none;font-weight:700;border-radius:50px}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card h3{color:#ffd700;margin-bottom:15px}
+.countdown{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.time{padding:15px 20px;background:rgba(255,215,0,.15);border:1px solid #ffd700;border-radius:16px}
+h2{text-align:center;font-size:2.5rem;color:#ffd700;margin-bottom:40px}
+footer{text-align:center;padding:40px 20px;background:#050505}
 </style>
 </head>
-
 <body>
 
-<div class="video-bg">
-<video autoplay muted loop playsinline>
-
+<video autoplay muted loop playsinline id="bg-video">
 <source src="vidio.mp4" type="video/mp4">
-
 </video>
-</div>
-
 <div class="overlay"></div>
-<nav>
 
-<div class="logo">
-HK 10K
-</div>
-
-<ul>
-
-<li>
-<a href="#kategori">Kategori</a>
-</li>
-
-<li>
-<a href="#benefit">Benefit</a>
-</li>
-
-<li>
-<a href="#gallery">Gallery</a>
-</li>
-
-<li>
-<a href="#daftar">Daftar</a>
-</li>
-
-</ul>
-
-</nav>
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>
-
-HK <span>10K RUN</span>
-
-<br>
-
-#ENERGIMUEMASMU
-
-</h1>
-
-<p>
-
-Event lari terbesar untuk seluruh pecinta olahraga.
-
-Raih medali, jersey eksklusif dan pengalaman lari terbaik.
-
-</p>
-
-<a
-href="https://poliponii2026.github.io/hkrun10k.Indonesia-FROM/"
-class="btn"
-target="_blank">
-
-DAFTAR SEKARANG
-
-</a>
+<div>
+<h1>HK 10K RUN</h1>
+<p>09 Agustus 2026 • Magelang</p>
+<a class="btn" href="https://wa.me/6283188698791">DAFTAR SEKARANG</a>
 
 <div class="countdown">
-
-<div class="box">
-<h2 id="days">00</h2>
-<span>Hari</span>
+<div class="time"><span id="days">0</span><br>Hari</div>
+<div class="time"><span id="hours">0</span><br>Jam</div>
+<div class="time"><span id="minutes">0</span><br>Menit</div>
+<div class="time"><span id="seconds">0</span><br>Detik</div>
 </div>
-
-<div class="box">
-<h2 id="hours">00</h2>
-<span>Jam</span>
 </div>
-
-<div class="box">
-<h2 id="minutes">00</h2>
-<span>Menit</span>
-</div>
-
-<div class="box">
-<h2 id="seconds">00</h2>
-<span>Detik</span>
-</div>
-
-</div>
-
-</div>
-
 </section>
-<section id="kategori">
 
-<h2 class="title">
-Race Category
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="677.jpg" alt="10K Race">
-
-<div class="card-content">
-
-<h3>10K Race</h3>
-
-<div class="price">
-Rp200.000
+<section>
+<div class="container">
+<h2>Race Category</h2>
+<div class="grid">
+<div class="glass card">
+<h3>10K RACE</h3>
+<h1>Rp 200.000</h1>
+<p>Exclusive Jersey</p>
+<p>Finisher Medal</p>
+<p>Goodiebag</p>
+<p>Refreshment</p>
 </div>
 
-<p>
+<div class="glass card">
+<h3>5K FUN RUN</h3>
+<h1>GRATIS</h1>
+<p>Exclusive Jersey</p>
+<p>Goodiebag</p>
+<p>Refreshment</p>
+</div>
 
-✔ Exclusive Jersey
+<div class="glass card">
+<h3>2.5K FUN RUN</h3>
+<h1>GRATIS</h1>
+<p>Maksimal usia 13 tahun</p>
+<p>Exclusive Jersey</p>
+<p>Goodiebag</p>
+</div>
+</div>
+</div>
+</section>
 
+<section>
+<div class="container">
+<h2>Prize Pool</h2>
+<div class="glass">
+<p>Open Male/Female: 10jt, 8jt, 6jt, 4jt, 2jt</p>
+<p>Master Male/Female: 5jt, 4jt, 3jt, 2jt, 1jt</p>
+<p>Master Category: Minimal usia 40 tahun.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Registrasi</h2>
+<div class="glass" style="text-align:center">
+<p>WhatsApp Admin</p>
+<h1>083188698791</h1>
 <br>
-
-✔ Finisher Medal
-
-<br>
-
-✔ Goodiebag
-
-<br>
-
-✔ Refreshment
-
-</p>
-
+<a class="btn" href="https://wa.me/6283188698791">Hubungi Admin</a>
 </div>
-
 </div>
-
-<div class="card">
-
-<img src="677.jpg" alt="5K Fun Run">
-
-<div class="card-content">
-
-<h3>5K Fun Run</h3>
-
-<div class="price">
-FREE
-</div>
-
-<p>
-
-✔ Exclusive Jersey
-
-<br>
-
-✔ Goodiebag
-
-<br>
-
-✔ Refreshment
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section id="benefit">
-
-<h2 class="title">
-Benefit Peserta
-</h2>
-
-<div class="benefit-grid">
-
-<div class="benefit">
-
-<h3>
-🏅 Finisher Medal
-</h3>
-
-<p>
-Medali eksklusif untuk seluruh peserta yang berhasil menyelesaikan lomba.
-</p>
-
-</div>
-
-<div class="benefit">
-
-<h3>
-👕 Jersey Premium
-</h3>
-
-<p>
-Jersey resmi HK 10K dengan bahan premium dan desain eksklusif.
-</p>
-
-</div>
-
-<div class="benefit">
-
-<h3>
-🎁 Goodie Bag
-</h3>
-
-<p>
-Berisi merchandise menarik dari sponsor dan panitia.
-</p>
-
-</div>
-
-<div class="benefit">
-
-<h3>
-🥤 Refreshment
-</h3>
-
-<p>
-Air minum dan snack tersedia selama event berlangsung.
-</p>
-
-</div>
-
-</div>
-
-</section>
-<section id="gallery">
-
-<h2 class="title">
-Official Jersey
-</h2>
-
-<div class="gallery">
-
-<img src="678.jpg" alt="Jersey 1">
-
-<img src="671.jpg" alt="Jersey 2">
-
-<img src="677.jpg" alt="Jersey 3">
-
-</div>
-
-</section>
-<section id="faq">
-
-<h2 class="title">
-FAQ
-</h2>
-
-<div class="faq-item">
-
-<h3>
-Apakah peserta mendapatkan jersey?
-</h3>
-
-<p>
-Ya, seluruh peserta akan mendapatkan jersey resmi event.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-Apakah peserta mendapatkan medali?
-</h3>
-
-<p>
-Finisher akan mendapatkan medali resmi HK 10K.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-Bagaimana cara melakukan pendaftaran?
-</h3>
-
-<p>
-Klik tombol DAFTAR SEKARANG lalu isi formulir pendaftaran online.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-Apakah tiket dapat dikembalikan?
-</h3>
-
-<p>
-Tiket yang telah dibeli tidak dapat dikembalikan atau dialihkan.
-</p>
-
-</div>
-
 </section>
 
-<section id="sponsor">
-
-<h2 class="title">
-Sponsor & Partner
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-Gold Sponsor
-</h3>
-
-<p>
-Logo Sponsor Utama
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-Silver Sponsor
-</h3>
-
-<p>
-Logo Sponsor Pendukung
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-Media Partner
-</h3>
-
-<p>
-Logo Media Partner
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section
-class="cta"
-id="daftar">
-
-<h2>
-Siap Menjadi Finisher HK 10K?
-</h2>
-
-<p>
-
-Jangan lewatkan kesempatan menjadi bagian dari HK 10K Indonesia.
-
-</p>
-
-<a
-href="https://poliponii2026.github.io/hkrun10k.Indonesia-FROM/"
-class="btn"
-target="_blank">
-
-DAFTAR SEKARANG
-
-</a>
-
-</section>
 <footer>
-
-© 2026 HK 10K Indonesia
-
-|
-
-#ENERGIMUEMASMU
-
+HK 10K Run Indonesia • Magelang • 09 Agustus 2026
 </footer>
-6283188698791
-<a
-href="https://wa.me/6283188698791"
-class="wa-float"
-target="_blank">
 
-💬
+<script>
+const target = new Date("August 9, 2026 00:00:00").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const d=target-now;
+document.getElementById("days").innerText=Math.floor(d/(1000*60*60*24));
+document.getElementById("hours").innerText=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerText=Math.floor((d%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerText=Math.floor((d%(1000*60))/1000);
+},1000);
+</script>
 
-</a>
-</body></html>
+</body>
+</html>
